@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fake News Detection</title>
+    <style>
+        body {
+            background-color: red;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 36px;
+        }
+
+        form {
+            margin-top: 30px;
+        }
+
+        textarea {
+            width: 500px;
+            height: 200px;
+            font-size: 16px;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            resize: none;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fake News Detection</h1>
+    <form action="/classify" method="post">
+        <textarea name="news" rows="4" cols="50" placeholder="Enter the news..."></textarea>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
