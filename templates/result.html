@@ -1,10 +1,109 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Classification Result</title>
+    <title>Fake News Detector - Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            text-align: center;
+            margin-top: 100px;
+        }
+        
+        h1 {
+            color: #333333;
+        }
+        
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffff;
+            border: 2px solid #333333;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+        }
+        
+        .popup.show {
+            display: block;
+        }
+        
+        .popup h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #333333;
+        }
+        
+        .popup .animation {
+            display: inline-block;
+            margin-top: 10px;
+        }
+        
+        .popup .animation span {
+            display: inline-block;
+            background-color: #333333;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
+            animation: pulse 1s ease-in-out infinite;
+        }
+        
+        .popup .animation span:nth-child(1) {
+            animation-delay: 0s;
+        }
+        
+        .popup .animation span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .popup .animation span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+    <script>
+        window.addEventListener("DOMContentLoaded", function() {
+            var popup = document.getElementById("popup");
+            
+            // Show the popup after a short delay
+            setTimeout(function() {
+                popup.classList.add("show");
+            }, 500); // 500 milliseconds = 0.5 seconds
+        });
+    </script>
 </head>
 <body>
-    <h1>Classification Result</h1>
-    <p>{{ result }}</p>
+    <div class="container">
+        <h1>Fake News Detector - Result</h1>
+        <div id="popup" class="popup">
+            <h2>{{ result }}</h2>
+            <div class="animation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
